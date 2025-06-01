@@ -5,6 +5,7 @@ body{
     height: 100vh;
     margin: 0;
     background-color: lightblue;
+    user-select: none;
 }
 .container{
     background-color: darkolivegreen;
@@ -15,11 +16,13 @@ body{
 }
 .result{
     background-color: black;
+    word-break: break-all;
     color: gray;
     padding: 0.3em;
     height: 3em;
     margin-bottom: 1em;
     border-radius: 0.3em;
+    text-wrap: wrap;
 }
 .buttons{
     display:grid;
