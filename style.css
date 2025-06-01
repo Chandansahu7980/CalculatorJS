@@ -53,9 +53,3 @@ textarea:placeholder-shown {
     background-color: darkorange;
     color: white;
 }
-
-@media screen and (max-width: 600px) {
-    .container{
-        width: 90%;
-    }
-}

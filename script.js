@@ -64,7 +64,7 @@ function addOperator(op) {
     if (currentInput.length === 0) return; // Prevent starting with operator
 
     const lastChar = currentInput.slice(-1);
-    if (['+', '-', '*', '/','%'].includes(lastChar)) {
+    if (['+', '-', '*', '/', '%'].includes(lastChar)) {
         currentInput = currentInput.slice(0, -1) + op;
     } else {
         currentInput += op;
@@ -73,3 +73,24 @@ function addOperator(op) {
     // Update the result section with the current input
     resultSection.innerHTML = currentInput;
 }
+
+document.addEventListener("keydown", (event) => {
+    const key = event.key;
+    if (key >= '0' && key <= '9') {
+        currentInput += key;
+        resultSection.innerHTML = currentInput;
+    } else if (key === 'Enter') {
+        try {
+            if (currentInput.length === 0) return; // Prevent evaluating empty input
+            currentInput = eval(currentInput).toString();
+        } catch (error) {
+            currentInput = 'Expression Error';
+        }
+        resultSection.innerHTML = currentInput;
+    } else if (key === 'Backspace') {
+        currentInput = currentInput.slice(0, -1);
+        resultSection.innerHTML = currentInput;
+    } else if (['+', '-', '*', '/', '%'].includes(key)) {
+        addOperator(key);
+    }
+});
