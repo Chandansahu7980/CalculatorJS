@@ -11,18 +11,18 @@ body{
     background-color: darkolivegreen;
     padding:0.8em;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     border-radius: 0.5em;
 }
-.result{
+textarea{
     background-color: black;
-    word-break: break-all;
     color: gray;
-    padding: 0.3em;
-    height: 3em;
+    resize: none;
+    font-size: 1.5em;
+    font-family: monospace;
     margin-bottom: 1em;
     border-radius: 0.3em;
-    text-wrap: wrap;
 }
 .buttons{
     display:grid;
