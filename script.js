@@ -11,7 +11,7 @@ button_numbers.forEach(button => {
 });
 
 document.getElementById("c").addEventListener("click", () => {
-    currentInput = '0';
+    currentInput = '';
     resultSection.innerHTML = currentInput;
 });
 
